@@ -1,0 +1,13 @@
+spring:
+  data:
+    mongodb:
+      username: redtape9
+      password: redtape9
+      host: localhost
+      port: 27017
+      database: chat_app
+      authentication-database: admin
+
+server:
+  port: 8080
+
