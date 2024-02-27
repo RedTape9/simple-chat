@@ -22,7 +22,13 @@ public class ChatMessageController {
             simpMessengingTemplate.convertAndSendToUser(
                     chatMessage.getRecipientId(),
                     "/queue/messages",
-                    null
+                    ChatNotification.builder()
+                            .id(savedMsg.getId())
+                            .senderId(savedMsg.getSenderId())
+                            .recipientId(savedMsg.getRecipientId())
+                            .content(savedMsg.getContent())
+                            .timestamp(savedMsg.getTimestamp())
+                            .build()
             );
     }
 
